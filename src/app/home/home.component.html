@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="encendido" style="margin-bottom: 60px">
+    <!-- Rounded switch -->
+    OFF
+    <label class="switch">
+      <input type="checkbox" (change)="prenderLed()" [formControl]="led" />
+      <span class="slider round"></span>
+    </label>
+    ON
+  </div>
+  <div class="temporizador">
+    <h4>Temporizador</h4>
+    <input class="number" type="number" [formControl]="temp" /><br />
+    <button
+      type="button"
+      [disabled]="!(temp.value >= 1)"
+      (click)="temporizar()"
+      class="button"
+    >
+      Empezar
+    </button>
+  </div>
+</div>
